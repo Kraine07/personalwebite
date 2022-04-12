@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+
+@keyframes fade {
+    from{opacity: 0}
+    to{opacity: 1}
+}
+
+@keyframes slide {
+    from{transform: translate(700px,0px);}
+    to{transform: translate(0,0);}
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background-image: url("/img/main/vr-headset-and-controllers-backlit-by-blue-light.jpg");
+    background-color:#00123a;
+    background-size: 100%;
+    background-origin: border-box;
+    background-position: 1% -40%;
+    background-repeat: no-repeat;
+    font-family: 'Josefin Sans', sans-serif;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+/* NAV */
+nav{
+
+    position: sticky;
+    right: 0;
+    top: 10px;
+    padding: 0 20px;
+}
+nav a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 10px;
+    padding: 6px 15px;
+    transition-duration: 0.4s;
+    text-shadow: 1px 1px 3px #00123a;
+}
+nav a:hover{
+    background-color: white;
+    color: blue;
+    text-shadow: none;
+}
+nav img{
+    width: 300px;
+}
+.menu{
+    float: right;
+}
+
+/* CONTENT */
+.content{
+    margin: 410px 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items:center;
+    text-align: center;
+}
+.content h1, .content p{
+    width: 60%;
+    margin: 10px;
+}
+
+.content p{
+    line-height: 1.2em;
+}
+
+/* PRODUCTS */
+.products{
+    margin: 80px 20px;
+    display: flex;
+    gap:200px;
+}
+
+.phone, .computer{
+    border: 2px solid white;
+}
+
+.products img{
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+}
+.products h3{
+    background-color: white;
+    color: blue;
+    margin:0;
+    padding:10px;
+}
+
+/* Button */
+
+.content button{
+    width: 20%;
+    margin-top: 30px;
+    padding: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+    background-color: white;
+    color: rgb(22, 5, 205);
+    /* border: 1px solid rgba(22, 5, 205, 0.9); */
+    border: none;
+    /* box-shadow: -1px 1px 2px rgba(219, 224, 241, 0.4); */
+    transition-duration: .5s;
+}
+.content button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* FOOTER */
+.footer{
+    bottom: 10px;
+    color:white;
+    text-align: center;
+}
