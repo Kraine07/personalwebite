@@ -1,0 +1,83 @@
+@keyframes fade {
+    from{opacity: 0}
+    to{opacity: 1}
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    /* background-image: url("/img/main/vr-headset-and-controllers-backlit-by-blue-light.jpg"); */
+    background-color:#00123a;
+    background-size: 100%;
+    background-origin: border-box;
+    background-position: 1% 0;
+    background-repeat: no-repeat;
+    font-family: 'Josefin Sans', sans-serif;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+/* NAV */
+nav{
+    position: sticky;
+    right: 0;
+    padding: 10px 20px;
+}
+nav .menu a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 10px;
+    padding: 6px 15px;
+    transition-duration: 0.4s;
+}
+nav .menu a:hover{
+    background-color: white;
+    color: blue;
+}
+nav img{
+    width: 300px;
+}
+.menu{
+    float: right;
+}
+
+video {
+    z-index: -1;
+    position: fixed;
+    right: 0;
+    top: -5%;
+    bottom: 0;
+    opacity: 0.7;
+    min-width: 100%;
+    min-height: 100%;
+}
+.info{
+    position: fixed;
+    width: 60%;
+    left: 20%;
+    right: 20%;
+    color: white;
+    text-align: center;
+}
+.info button{
+    width: 15%;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(22, 5, 205);
+    padding: 10px;
+    border: none;
+    margin: 40px
+}
+
+.footer{
+    position: fixed;
+    width: 60%;
+    bottom: 5%;
+    left: 20%;
+    color: white;
+    text-align: center;
+}

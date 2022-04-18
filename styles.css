@@ -1,0 +1,294 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Cinzel&family=Righteous&family=Sansita+Swashed:wght@300&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+hr{
+    width: 90%;
+    height: 2px;
+    background-color:rgb(15, 14, 107);
+}
+
+body{
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url("/img/iphone-photography-landscape.jpg");
+    background-size:100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    overflow: auto;
+}
+
+button{
+    border: none;
+    background-color:rgb(6, 22, 73);
+    padding: 8.4px 40px;
+    font-size: 20px;
+    font-family: 'Sansita Swashed', Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 100;
+    text-align: center;
+    letter-spacing: 2px;
+    transition-duration: 0.2s;
+}
+
+.nav{display: flex;
+    justify-content: space-between;
+    background-color: rgb(6, 22, 73);
+    border:1px solid rgb(6, 22, 73);
+    position: sticky;
+    top:0;
+}
+.search button{
+    border-left: 2px solid rgb(6, 22, 73);
+    background-color:white;
+    border-radius: 0 6px 6px 0;
+    float: right;
+    padding: 2px;
+    width: 50px;
+    height: 41.3px;
+}
+
+
+.search input{
+    border: none;
+    border-radius: 6px 0 0 6px;
+    width: 300px;
+    font-size: 20px;
+    padding: 7.4px;
+    margin: 0;
+    font-family: Chakra Petch;
+    font-weight: bold;
+    outline: none;
+    color:darkblue;
+}
+.banner{
+    background-image: url("/img/banner/globe.png");
+    background-size: 100%;
+    height: 290px;
+}
+.banner img{
+    object-fit: cover;
+    object-position: -30px 37%;
+    height: 220px;
+    width: 700px;
+}
+
+.mainbtns,.statusbtns{
+    display: inline;
+}
+
+.mainbtns button{
+    float: left;
+    color:rgba(255, 255, 255, 0.8);
+}
+
+.mainbtns button:hover, .statusbtns button:hover{
+    font-weight: 600;
+    color:white;
+}
+
+.statusbtns button{
+    float: right;
+    font-family: Cinzel;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+}
+
+
+
+#logout{
+    display: none;
+}
+
+
+
+
+/* login modal */
+.loginModal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color:rgba(0, 0, 0, 0.8);
+}
+
+@keyframes FadeIn{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+@keyframes slideLeft {
+    from{right: -500px;}
+    to{right: 20px;}
+}
+.modalBox{
+    animation-name: slideLeft;
+    animation-duration: 1s;
+    background-color: rgb(217, 222, 250);
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    border-bottom: 30px solid rgb(6, 22, 73);
+}
+
+
+.modalContent{
+    display: flex;
+    flex-direction: row;
+}
+
+.loginForm,.signUpForm{
+    padding: 20px;
+    margin: 10px;
+}
+
+.loginForm input, .signUpForm input{
+    display: block;
+    margin: 10px;
+    font-size: 18px;
+    font-family: Chakra Petch;
+    font-weight: 600;
+    color: gr;
+    padding: 3px 10px;
+    outline: none;
+    border:none;
+    background: none;
+    border-bottom: 2px solid grey;
+}
+
+.modalContent button{
+    font-family: Cinzel;
+    font-size: 14px;
+    color: rgb(235, 235, 235);
+    border-radius: 20px;
+    margin-top: 20px;
+    width: 100%;
+    /* padding: 8px 15px; */
+}
+
+.modalBox h2{
+    font-family:Righteous;
+    font-weight: 100;
+    color: white;
+    margin: 0;
+    padding: 20px 0;
+    text-align: center;
+    background-color:rgb(6, 22, 73);
+    height: inherit;
+    border-top: 10px solid rgb(217, 222, 250);
+}
+
+#modalClose{
+    font-family:Righteous;
+    font-size: 30px;
+    font-weight: 100;
+    color: white;
+    float: right;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 0 5px 0 0;
+    height: 20px;
+    width: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+#modalClose:hover{
+    /* box-shadow: 0 0 4px; */
+    transform: scale(1.4);
+    cursor: pointer;
+}
+
+#main {
+    background-color:rgba(3, 12, 41, 0.8);
+    color: white;
+    font-size: 30px;
+    width: 70%;
+    margin: 50px auto;
+    padding: 40px;
+}
+
+#main h3{
+    text-align: center;
+}
+
+
+
+
+#products{
+    margin: 80px 40px;
+}
+
+#product .mainContent{
+    display: grid;
+    grid-auto-columns: 280px;
+    grid-auto-rows: 300px;
+    position: relative;
+    top: 20px;
+    z-index: -1;
+}
+
+.productBox{
+    margin: 20px;
+    color: white;
+    text-align: center;
+    font-family: Cinzel;
+    background-color:rgba(3, 12, 41, 0.8);
+    border-radius: 10px;
+}
+
+
+#product1{
+    grid-row: 1 ;
+    grid-column: 2/5;
+}
+
+#product2{
+    grid-row: 2;
+    grid-column: 2/5;
+}
+
+#product3{
+    grid-row: 3;
+    grid-column: 2/5;
+}
+.productBox img{
+    height: 220px;
+    width: 280px;
+    object-fit: cover;
+    margin:0;
+}
+
+
+.productBox h3{
+    margin:0;
+}
+
+
+.promo{
+    margin-top: 30px;
+    margin-left: 280px;
+    background-image:url();
+    background-size: 70%;
+    background-repeat: no-repeat;
+    height: 480px;
+}
+
+
+.footer{
+    float: right;
+    color: white;
+}
+
+.footer p{
+    color: white;
+    font-size: 20px;
+    margin-right: 60px;
+    letter-spacing: 2px;
+}

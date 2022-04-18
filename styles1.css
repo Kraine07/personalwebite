@@ -5,6 +5,16 @@
     to{opacity: 1}
 }
 
+@keyframes flicker {
+    0%{opacity: 0}
+    15%{opacity: 1;}
+    25%{opacity: 0;}
+    30%{opacity: 1}
+    50%{opacity: 0;}
+    70%{opacity: 1;}
+}
+
+
 @keyframes slide {
     from{transform: translate(700px,0px);}
     to{transform: translate(0,0);}
@@ -15,11 +25,12 @@ html {
 }
 
 body{
+    margin: 0;
     background-image: url("/img/main/vr-headset-and-controllers-backlit-by-blue-light.jpg");
     background-color:#00123a;
     background-size: 100%;
     background-origin: border-box;
-    background-position: 1% -40%;
+    /* background-position: 0 0; */
     background-repeat: no-repeat;
     font-family: 'Josefin Sans', sans-serif;
     animation-name: fade;
@@ -28,25 +39,23 @@ body{
 
 /* NAV */
 nav{
-
+    z-index: 1;
     position: sticky;
     right: 0;
     top: 10px;
     padding: 0 20px;
 }
-nav a{
+nav .menu a{
     color: white;
     font-weight: bold;
     text-decoration: none;
     margin: 10px;
     padding: 6px 15px;
     transition-duration: 0.4s;
-    text-shadow: 1px 1px 3px #00123a;
 }
-nav a:hover{
+nav .menu a:hover{
     background-color: white;
     color: blue;
-    text-shadow: none;
 }
 nav img{
     width: 300px;
@@ -57,7 +66,7 @@ nav img{
 
 /* CONTENT */
 .content{
-    margin: 410px 0 40px 0;
+    margin: 5% 0 0 0;
     display: flex;
     flex-direction: column;
     color: white;
@@ -75,13 +84,38 @@ nav img{
 
 /* PRODUCTS */
 .products{
-    margin: 80px 20px;
+    margin: 43% 0 0 0;
+    padding: 60px;
     display: flex;
-    gap:200px;
+    justify-content: space-around;
+    background-color: rgba(26.6, 18, 1.6,0.3);
+    width: 100%;
 }
+
+@keyframes glow{
+    0%{box-shadow: 0 0 10px blue}
+    50%{box-shadow: 0 0 30px blue}
+    100%{box-shadow: 0 0 10px blue}
+}
+
 
 .phone, .computer{
     border: 2px solid white;
+
+}
+.phone:hover, .computer:hover{
+    border: 2px solid blue;
+    animation: glow 2s infinite;
+    transition-duration: 0.2s;
+    transform: scale(1.03);
+}
+.phone:hover  #phone_text,.computer:hover #computer_text{
+    background-color: blue;
+    color: white;
+}
+.computer a, .phone a{
+    text-decoration: none;
+    color: white;
 }
 
 .products img{
@@ -91,9 +125,11 @@ nav img{
 }
 .products h3{
     background-color: white;
-    color: blue;
+    /* color: blue; */
     margin:0;
     padding:10px;
+    font-size: 2em;
+    text-shadow: 1px 1px 3px #0452fc;
 }
 
 /* Button */
@@ -107,9 +143,7 @@ nav img{
     font-size: 20px;
     background-color: white;
     color: rgb(22, 5, 205);
-    /* border: 1px solid rgba(22, 5, 205, 0.9); */
     border: none;
-    /* box-shadow: -1px 1px 2px rgba(219, 224, 241, 0.4); */
     transition-duration: .5s;
 }
 .content button:hover{
@@ -119,7 +153,8 @@ nav img{
 
 /* FOOTER */
 .footer{
-    bottom: 10px;
+    position: fixed;
+    bottom: 5%;
     color:white;
     text-align: center;
 }
