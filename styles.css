@@ -1,294 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@300&family=Play&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Cinzel&family=Righteous&family=Sansita+Swashed:wght@300&display=swap');
-
-html{
-    scroll-behavior: smooth;
+@keyframes fade {
+    from{opacity: 0}
+    to{opacity: 1}
 }
 
-hr{
-    width: 90%;
-    height: 2px;
-    background-color:rgb(15, 14, 107);
+html {
+    scroll-behavior: smooth;
 }
 
 body{
     margin: 0;
-    font-family: 'Times New Roman', Times, serif;
-    background-image: url("/img/iphone-photography-landscape.jpg");
-    background-size:100%;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    overflow: auto;
-}
-
-button{
-    border: none;
-    background-color:rgb(6, 22, 73);
-    padding: 8.4px 40px;
-    font-size: 20px;
-    font-family: 'Sansita Swashed', Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: 100;
-    text-align: center;
-    letter-spacing: 2px;
-    transition-duration: 0.2s;
-}
-
-.nav{display: flex;
-    justify-content: space-between;
-    background-color: rgb(6, 22, 73);
-    border:1px solid rgb(6, 22, 73);
-    position: sticky;
-    top:0;
-}
-.search button{
-    border-left: 2px solid rgb(6, 22, 73);
-    background-color:white;
-    border-radius: 0 6px 6px 0;
-    float: right;
-    padding: 2px;
-    width: 50px;
-    height: 41.3px;
-}
-
-
-.search input{
-    border: none;
-    border-radius: 6px 0 0 6px;
-    width: 300px;
-    font-size: 20px;
-    padding: 7.4px;
-    margin: 0;
-    font-family: Chakra Petch;
-    font-weight: bold;
-    outline: none;
-    color:darkblue;
-}
-.banner{
-    background-image: url("/img/banner/globe.png");
+    background-image: url("/img/main/vr-headset-and-controllers-backlit-by-blue-light.jpg");
+    background-color:#030c1d;
     background-size: 100%;
-    height: 290px;
-}
-.banner img{
-    object-fit: cover;
-    object-position: -30px 37%;
-    height: 220px;
-    width: 700px;
+    background-position: 0 -90px;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    font-family: 'Josefin Sans', sans-serif;
+    animation-name: fade 2s;
 }
 
-.mainbtns,.statusbtns{
-    display: inline;
+#phone_body, #computer_body{
+    margin: 0;
+    background-color:#030c1d;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    font-family: 'Josefin Sans', sans-serif;
+    animation-name: fade 2s;
 }
 
-.mainbtns button{
-    float: left;
-    color:rgba(255, 255, 255, 0.8);
+/* NAV */
+nav{
+    z-index: 1;
+    position: sticky;
+    right: 0;
+    top: 0px;
+    padding: 0 10px;
+    background-color: rgba(3, 12, 29, 0.9);
 }
-
-.mainbtns button:hover, .statusbtns button:hover{
-    font-weight: 600;
-    color:white;
-}
-
-.statusbtns button{
-    float: right;
-    font-family: Cinzel;
+nav .menu a{
+    color: #706120;
     font-weight: bold;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 18px;
+    text-decoration: none;
+    margin: 10px;
+    padding: 6px 25px;
+    border-radius: 25px;
+    transition-duration: 0.7s;
+}
+nav .menu a:hover{
+    background-color: #706120;
+    color: #030C1D;
+    text-shadow: none;
+}
+nav img{
+    width: 300px;
+}
+.menu{
+    float: right;
+    margin-top: 20px;
+}
+
+/* CONTENT */
+.content{
+    margin: 5% 0 0 0;
+    display: flex;
+    flex-direction: column;
+    color: #706120;
+    align-items:center;
+    text-align: center;
+}
+.content h1, .content p{
+    width: 60%;
+    margin: 10px;
+}
+
+.content p{
+    line-height: 1.2em;
+}
+
+/* PRODUCTS */
+.products{
+    margin: 30% 0 0 0;
+    padding: 60px;
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
+@keyframes glow{
+    0%{box-shadow: 0 0 5px #706120}
+    50%{box-shadow: 0 0 20px #706120}
+    100%{box-shadow: 0 0 5px #706120}
+}
+
+
+.phone, .computer{
+    border: 2px solid #1A2B4B;
+
+}
+.phone:hover, .computer:hover{
+    border: 2px solid #706120;
+    animation: glow 1.4s infinite;
+    transition-duration: 0.5s;
+    transform: scale(1.05);
+}
+.phone:hover  #phone_text,.computer:hover #computer_text{
+    background-color: #706120;
+    color: #1A2B4B;
+    text-shadow: none;
+}
+.computer a, .phone a{
+    text-decoration: none;
+    color: #706120;
+}
+
+.products img{
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+}
+.products h3{
+    background-color: #1A2B4B;
+    margin:0;
+    padding:10px;
+    font-size: 2em;
+    font-weight: bolder;
 }
 
 
 
-#logout{
-    display: none;
+
+/* MODAL */
+
+@keyframes slideLeft {
+    0%{
+        right: -340px;
+        transform: skewX(-15deg);
+    }
+    50%{
+        right: 40px;
+        transform: rotate(-10deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
 }
 
-
-
-
-/* login modal */
-.loginModal{
+.modal{
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.9);
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    background-color:rgba(0, 0, 0, 0.8);
+    animation: fade 1s;
 }
-
-@keyframes FadeIn{
-    from{opacity: 0;}
-    to{opacity: 1;}
-}
-
-@keyframes slideLeft {
-    from{right: -500px;}
-    to{right: 20px;}
-}
-.modalBox{
-    animation-name: slideLeft;
-    animation-duration: 1s;
-    background-color: rgb(217, 222, 250);
-    position: fixed;
-    top: 70px;
-    right: 20px;
-    border-bottom: 30px solid rgb(6, 22, 73);
-}
-
-
-.modalContent{
+.modal_content form{
     display: flex;
-    flex-direction: row;
-}
-
-.loginForm,.signUpForm{
-    padding: 20px;
-    margin: 10px;
-}
-
-.loginForm input, .signUpForm input{
-    display: block;
-    margin: 10px;
-    font-size: 18px;
-    font-family: Chakra Petch;
-    font-weight: 600;
-    color: gr;
-    padding: 3px 10px;
-    outline: none;
-    border:none;
-    background: none;
-    border-bottom: 2px solid grey;
-}
-
-.modalContent button{
-    font-family: Cinzel;
-    font-size: 14px;
-    color: rgb(235, 235, 235);
-    border-radius: 20px;
-    margin-top: 20px;
-    width: 100%;
-    /* padding: 8px 15px; */
-}
-
-.modalBox h2{
-    font-family:Righteous;
-    font-weight: 100;
-    color: white;
-    margin: 0;
-    padding: 20px 0;
-    text-align: center;
-    background-color:rgb(6, 22, 73);
-    height: inherit;
-    border-top: 10px solid rgb(217, 222, 250);
-}
-
-#modalClose{
-    font-family:Righteous;
-    font-size: 30px;
-    font-weight: 100;
-    color: white;
-    float: right;
-    border-radius: 50%;
-    padding: 5px;
-    margin: 0 5px 0 0;
-    height: 20px;
-    width: 20px;
-    display: inline-flex;
-    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 10px;
+    position: fixed;
+    right: 40px;
+    top: 40px;
+    background-color: #1A2B4B;
+    width: 340px;
     align-items: center;
+    border: 1px solid #706120;
+    animation: slideLeft 1s;
 }
-#modalClose:hover{
-    /* box-shadow: 0 0 4px; */
-    transform: scale(1.4);
+#close_btn{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+#close_btn:hover{
     cursor: pointer;
 }
+.modal_content h3{
+    background-color:#706120;
+    color: #0B1931;
+    margin: 0 0 10px 0;
+    padding: 15px 10px;
+    width: 320px;
+}
 
-#main {
-    background-color:rgba(3, 12, 41, 0.8);
-    color: white;
-    font-size: 30px;
+#user_icon{
+    display: flex;
+    font-size: 90px;
+    color:#030C1D;
+    background-color: #706120;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 20px 0 0 0;
+}
+.modal_content input{
+    display: block;
+    background-color:#030C1D;
     width: 70%;
-    margin: 50px auto;
-    padding: 40px;
+    margin: 10px 0;
+    padding: 10px 15px;
+    font-size: 15px;
+    color: #706120;
+    border: none;
+    border-radius: 5px;
 }
-
-#main h3{
-    text-align: center;
+.modal_content input:focus{
+    outline: none;
 }
-
-
-
-
-#products{
-    margin: 80px 40px;
-}
-
-#product .mainContent{
-    display: grid;
-    grid-auto-columns: 280px;
-    grid-auto-rows: 300px;
-    position: relative;
-    top: 20px;
-    z-index: -1;
-}
-
-.productBox{
-    margin: 20px;
-    color: white;
-    text-align: center;
-    font-family: Cinzel;
-    background-color:rgba(3, 12, 41, 0.8);
-    border-radius: 10px;
-}
-
-
-#product1{
-    grid-row: 1 ;
-    grid-column: 2/5;
-}
-
-#product2{
-    grid-row: 2;
-    grid-column: 2/5;
-}
-
-#product3{
-    grid-row: 3;
-    grid-column: 2/5;
-}
-.productBox img{
-    height: 220px;
-    width: 280px;
-    object-fit: cover;
-    margin:0;
-}
-
-
-.productBox h3{
-    margin:0;
-}
-
-
-.promo{
-    margin-top: 30px;
-    margin-left: 280px;
-    background-image:url();
-    background-size: 70%;
-    background-repeat: no-repeat;
-    height: 480px;
-}
-
-
-.footer{
-    float: right;
-    color: white;
-}
-
-.footer p{
-    color: white;
+#login_btn{
+    font-family: 'Changa', sans-serif;
     font-size: 20px;
-    margin-right: 60px;
-    letter-spacing: 2px;
+    background-color: #706120;
+    width: 50%;
+    color: #030C1D;
+    margin: 10px 0;
+    padding: 3px 10px;
+    border: none;
+    border-radius: 5px;
+}
+#login_btn:hover{
+    cursor: pointer;
+}
+.modal_content a{
+    margin: 10px;
+    color: #706120;
+    font-weight: bold;
+}
+/* FOOTER */
+.footer{
+    bottom: 5%;
+    color:white;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(112, 97, 32, 0.3);
+}
+
+#phone_footer, #computer_footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    color: white;
+    text-align: center;
+    background-color: rgba(3, 12, 29,0.8);
+}
+
+
+/* products */
+
+video {
+    z-index: -1;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 40%;
+    left: 30%;
+    color: white;
+    text-align: center;
+}
+.info button{
+    font-family: 'Changa', sans-serif;
+    width: 25%;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #706120;
+    padding: 3px 10px;
+    border: none;
 }
